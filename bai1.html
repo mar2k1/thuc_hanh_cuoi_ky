@@ -28,7 +28,26 @@
         document.getElementById("showArray").innerText = "Mảng: [" + array.join(",") + "]";
         input.value = "";
     }
-    function average() {}
+    function average() {
+        if (array.length === 0) {
+            alert("Bạn chưa nhập số vào mảng");
+            return;
+        }
+        let total = 0;
+        let calculate = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 3 === 0) {
+                total += array[i];
+                calculate++;
+            }
+        }
+        if (calculate === 0) {
+            document.getElementById("result").innerText = "Không có số nào chia hết cho 3";
+        } else {
+            let average = total/calculate;
+            document.getElementById("result").innerText = "Trung bình cộng các số chia hết cho 3 là:" + average;
+        }
+    }
 </script>
 </body>
 </html>
