@@ -26,6 +26,19 @@
             document.getElementById("result").innerText = "Tháng hoặc năm không chính xác";
             return;
         }
+        let date = 0;
+        if (thang === 2) {
+            if (namNhuan(nam)) {
+                date = 29;
+            } else {
+                date = 28;
+            }
+        } else if (thang === 4 ||thang === 6 ||thang === 9 ||thang === 11) {
+            date = 30;
+        } else {
+            date = 31;
+        }
+        document.getElementById("result").innerText = "Tháng " + thang + "/" + nam + " có " + date + " ngày";
     }
 </script>
 </body>
