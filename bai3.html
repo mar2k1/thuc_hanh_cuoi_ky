@@ -10,7 +10,23 @@
 <button onclick="dateCalculate()">Tính số ngày</button>
 <p id="result">Kết quả:</p>
 <script>
-
+    function namNhuan(nam) {
+        return (nam % 4 === 0 && nam % 100 !== 0) || (nam % 400 === 0);
+    }
+    function dateCalculate() {
+        let input = document.getElementById("thangNam").value;
+        let space = input.split("/");
+        if (space.length !== 2) {
+            document.getElementById("result").innerText = "Sai định dạng! Hãy nhập đúng định dạng MM/yy";
+            return;
+        }
+        let thang = parseInt(space[0]);
+        let nam = parseInt(space[1]);
+        if (isNaN(thang) || isNaN(nam) || thang < 1 || thang > 12) {
+            document.getElementById("result").innerText = "Tháng hoặc năm không chính xác";
+            return;
+        }
+    }
 </script>
 </body>
 </html>
