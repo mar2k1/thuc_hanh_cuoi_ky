@@ -11,6 +11,20 @@
 <button onclick="addUnit()">Thêm</button>
 <button onclick="average()">Tính</button>
 <p id="result">Kết quả:</p>
-
+<script>
+    let array = [];
+    function addUnit() {
+        let input = document.getElementById("nhapSoNguyen");
+        let value = parseInt(input.value);
+        if (array.length >= 50) {
+            alert("Đã đạt giới hạn tối đa");
+            return;
+        }
+        if (isNaN(value)) {
+            alert("Vui lòng nhập đúng 1 số!");
+            return;
+        }
+    }
+</script>
 </body>
 </html>
