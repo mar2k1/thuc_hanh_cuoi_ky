@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Bài 4</title>
     <style>
-        body {font-family: Arial; sans-serif; margin: 20px;}
+        body {font-family: Arial, sans-serif; margin: 20px;}
         table {border-collapse: collapse; width: 80%; margin-top: 15px;}
         th, td {border: 1px solid #333; padding: 8px 12px; text-align: left;}
         th {background-color: #f2f2f2;}
@@ -31,7 +31,7 @@
         new worker(3, "Trương Tấn C", "11-11-1997", "Đà Nẵng", 2000, "ABC"),
     ];
     function nameSort(array) {
-        return array.sort((a,b) => a.name.localeCompare(b.name), 'vi', {sensitivity: 'base'}));
+        return array.sort((a,b) => a.name.localeCompare(b.name, 'vi', {sensitivity: 'base'}));
     }
     function listShow() {
         nameSort(workerList);
@@ -53,11 +53,11 @@
             html += `
             <tr>
                 <td>${index +1}</td>
-                <td>${cn.name +1}</td>
-                <td>${cn.birth +1}</td>
-                <td>${cn.address +1}</td>
-                <td>${cn.luong +1}</td>
-                <td>${cn.position +1}</td>
+                <td>${cn.name}</td>
+                <td>${cn.birth}</td>
+                <td>${cn.address}</td>
+                <td>${cn.luong}</td>
+                <td>${cn.position}</td>
             </tr>
             `;
         });
