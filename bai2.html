@@ -10,7 +10,18 @@
 <button onclick="test()">Kiểm tra</button>
 <p id="result">Kết quả:</p>
 <script>
-
+    function perfectNum(n) {
+        if (n <= 0) {
+            return false;
+        }
+        let total = 0;
+        for (let i = 1; i < n; i++) {
+            if (n % i === 0) {
+                total += i;
+            }
+        }
+        return total === n;
+    }
 </script>
 </body>
 </html>
